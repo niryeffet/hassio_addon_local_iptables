@@ -1,6 +1,6 @@
 name: Iptables
 description: Apply iptables rules
-version: 1.0.0
+version: 1.0.1
 slug: iptables
 init: false
 arch:
@@ -13,6 +13,6 @@ host_network: true
 privileged:
   - NET_ADMIN
 options:
-  Oneshot: false
+  Stay_up: true
 schema:
-  Oneshot: bool
+  Stay_up: bool

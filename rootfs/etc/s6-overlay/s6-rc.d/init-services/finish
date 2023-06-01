@@ -1,9 +1,9 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 
-ONESHOT=$(bashio::config 'Oneshot')
+STAYUP=$(bashio::config 'Stay_up')
                           
-if [ "$ONESHOT" != "true" ]; then
+if [ "$STAYUP" == "true" ]; then
   for T in filter nat mangle raw security; do
     iptables -t $T -F || true
   done
