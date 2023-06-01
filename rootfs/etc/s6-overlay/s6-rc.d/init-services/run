@@ -1,0 +1,15 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+
+ONESHOT=$(bashio::config 'Oneshot')
+
+RULES=/data/iptables/rules
+
+[ -f $RULES.v4 ] && iptables-restore $RULES.v4
+[ -f $RULES.v6 ] && iptables-restore $RULES.v6
+
+if [ "$ONESHOT" == "true" ]; then
+  /run/s6/basedir/bin/halt
+else
+  true
+fi
