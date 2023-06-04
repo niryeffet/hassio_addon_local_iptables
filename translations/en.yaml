@@ -1,0 +1,5 @@
+---
+configuration:
+  Stay_up:
+    name: Stay Up
+    description: When Stay up is turned on, you can use docker to create/edit the rules files and stopping the addon will clean all iptables. When Stay up is turned off, the addon will apply the rules and exit with out cleaning.
